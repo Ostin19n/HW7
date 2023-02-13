@@ -10,11 +10,21 @@
 // 8 4 2 4
 
 // 17 -> такого числа в массиве нет
+
+
  int m = GetNum("Введите номер строчки: ");
  int n = GetNum("Введите номер столбца: ");
  int [,] matrix = new int [10,10];
  RandomNumbers(matrix);
  PrintArray(matrix);
+
+ 
+
+int GetNum(string text)
+{
+    Console.Write(text);
+    return int.Parse(Console.ReadLine());
+}
 
 if (n > matrix.GetLength(0) || m > matrix.GetLength(1))
 {
@@ -31,7 +41,7 @@ void RandomNumbers(int[,] array)
         {        
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                array [i,j] = new Random().Next(100, 100)/10;
+                array [i,j] = new Random().Next(-100, 100)/10;
             }   
         }
 }
@@ -51,11 +61,4 @@ void PrintArray (int[,] array)
 }
 
 
-
-
-int GetNum(string text)
-{
-    Console.Write(text);
-    return int.Parse(Console.ReadLine());
-}
 
